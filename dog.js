@@ -37,7 +37,7 @@ function displayResults(getDog) {
 function all() {
     console.log("The page has loaded")
     watchForm();
-    displayResults();
+    
 };
 
 $(all);
