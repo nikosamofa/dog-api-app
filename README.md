@@ -5,6 +5,8 @@ This is a sample wireframe for a dog app that displays dog random dog photos bet
 - css
 - Jquery 
 - json 
+
+
 check it out [here!](https://nikosamofa.github.io/dog-api-app/)
 
 ## Feedback 
