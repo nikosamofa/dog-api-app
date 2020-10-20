@@ -22,10 +22,9 @@ function getTheDog(submissions) {
 };
 
 
-function displayDogs(submissions) {
-   const  number = getTheDog(submissions);
-     result= '';
-    for (let i=0; i < number.length; i++){
+function displayResults(getDog) {         
+    let result= '';
+    for (let i=0; i < getDog.length; i++){
      result += $(".dog-images").closest(".dog-list").append(
         `<li><input type="image" src="${i}" alt="picutre of a Dog" class="dog-images">
                 </li>`) + ';';  } 
