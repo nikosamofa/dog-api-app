@@ -8,7 +8,7 @@ function watchForm() {
 
         //this make the image section visible    
         $('.images').removeAttr('hidden');
-        displayDogs(submissions);
+        displayResults(submissions);
     })
 };
 
@@ -22,14 +22,15 @@ function getTheDog(submissions) {
 };
 
 
-function displayResults(getDog) {         
-    let result= '';
-    for (let i=0; i < getDog.length; i++){
-     result += $(".dog-images").closest(".dog-list").append(
-        `<li><input type="image" src="${i}" alt="picutre of a Dog" class="dog-images">
-                </li>`) + ';';  } 
-    return result;       
-};
+function displayResults(getDog) {
+    result = '';
+    for (let i = 0; i < getDog.length; i++) {
+        result += getDog[i]
+    };
+    $(".dog-images").closest(".dog-list").replaceWith(
+        `<li><input type="image" src="${result}" alt="picutre of a Dog" class="dog-images">
+                </li>`)
+}
 
 
 function all() {
