@@ -5,7 +5,7 @@ function watchForm() {
 
         //this is the user input
         let submissions = $('.number-of-dogs').val();
-        
+
         //this make the image section visible    
         $('.images').removeAttr('hidden');
         displayDogs(submissions);
@@ -14,7 +14,7 @@ function watchForm() {
 
 
 function getTheDog(submissions) {
-     const url = `https://dog.ceo/api/breeds/image/random/${submissions}`;
+    const url = `https://dog.ceo/api/breeds/image/random/${submissions}`;
     fetch(url)
         .then(response => response.json())
         .then(getDog => displayResults(getDog))
@@ -22,12 +22,16 @@ function getTheDog(submissions) {
 };
 
 
-function displayDogs(submissions, ) {
-     number = getTheDog(submissions);
-     console.log(getTheDog);
-    $(".dog-images").replaceWith(
-        `<input type="image" src="${number}" alt="picutre of a Dog" class="dog-images">`
-    )};
+function displayDogs(submissions) {
+   const  number = getTheDog(submissions);
+     result= '';
+    for (let i=0; i < number.length; i++){
+     result += $(".dog-images").closest(".dog-list").append(
+        `<li><input type="image" src="${i}" alt="picutre of a Dog" class="dog-images">
+                </li>`) + ';';  } 
+    return result;       
+};
+
 
 function all() {
     console.log("The page has loaded")
