@@ -9,11 +9,15 @@ function watchForm() {
 
         //this is the user input
         let submissions = $('.number-of-dogs').val();
+        if (submissions < 3 || submissions == '' || submissions == ' ') {
+            submissions = 3;
+        };
 
         //this make the image section visible        
         getTheDog(submissions)
     });
 };
+
 
 function getTheDog(submissions) {
     const url = `https://dog.ceo/api/breeds/image/random/${submissions}`;
@@ -37,7 +41,7 @@ function displayResults(getDog) {
 function all() {
     console.log("The page has loaded")
     watchForm();
-    
+
 };
 
 $(all);
