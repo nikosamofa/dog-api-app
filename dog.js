@@ -35,6 +35,7 @@ function displayResults(getDog) {
         $('.dog-images').append(`<li><img src="${getDog.message[i]}" alt="picutre of a Dog" class="dogimages"/></li>`);
     };
     $('.hidden-div').removeAttr('hidden')
+    console.log(getDog)
 };
 
 
